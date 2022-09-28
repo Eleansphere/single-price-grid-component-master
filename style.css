@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+:root{
+  --cyan:hsl(179, 62%, 43%);
+  --bright-yellow:hsl(71, 73%, 54%);
+  --light-gray:hsl(204, 43%, 93%);
+  --grayish-bue:hsl(218, 22%, 67%);
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*LAYOUT*/
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  max-width: 1440px;
+  min-width: 375px;
+  margin: 0 auto;
+  font-family: 'Karla',sans-serif;
+  background: var(--light-gray);
+  font-size: 16px;
+}
+main {
+  display:grid;
+  width: 100%;
+  max-width: 650px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 0.8fr 1.2fr;
+}
+.top-section {
+  background-color: white;
+  color: hsl(218, 22%, 67%);
+  grid-area: 1/1/2/3;
+  box-shadow: 0px 0px 10px #999999;
+  border-radius: 0.6rem 0.6rem 0 0;
+  padding: 2rem;
+}
+.top-section h3{
+  color: var(--bright-yellow);
+}
+.bottom-left-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content:space-between;
+  background-color:  hsl(179, 66%, 30%);
+  border-bottom-left-radius: 0.6rem;
+  color: rgb(231, 230, 230);
+  box-shadow: 0px 5px 10px #999999;
+  padding: 2rem;
+}
+.bottom-right-section {
+  background-color: hsl(179, 62%, 43%);
+  border-bottom-right-radius: 0.6rem;
+  color: rgb(231, 230, 230);
+  box-shadow: 3px 5px 10px #999999;
+  padding: 2rem;
+}
+.price-tag{
+  display: flex;
+  align-items: center;
+}
+/*STYLING*/
+span{
+  color:var(--grayish-bue);
+}
+strong{
+  font-size: 32px;
+  margin-right: 0.6rem;
+}
+h1, h3, strong{
+  font-weight: 700;
+}
+h1 {
+    color:var(--cyan);
+    margin-bottom: 1.6rem;
+}
+h3{
+    color: white;
+    margin-bottom: 1rem;    
+}
+p{
+  line-height: 1.5;
+}
+button{
+  border: none;
+  outline: none;
+  border-radius: 0.2rem;
+  width: 100%;
+  color:var(--light-gray);
+  background-color: var(--bright-yellow);
+  padding: 1rem 2rem;
+  font-weight: 700;
+  font-size: 16px;
+}
+button:hover {
+  cursor: pointer;
+}
+
+/*RESPONSIVE*/
+@media only screen and (max-width:650px) {
+    main {
+      display:grid;
+      width: 80%;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3,1fr);
+    }
+    .top-section {
+      grid-area: 1/1/2/2;
+    }
+    .bottom-left-section{
+      border-bottom-left-radius:0px;
+    }
+    .bottom-right-section{
+      border-bottom-left-radius: 0.6rem;
+    }
+}
